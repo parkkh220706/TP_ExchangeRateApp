@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory
+        android:title="환율알림설정"
+        android:iconSpaceReserved="false">
+
+        <SwitchPreference
+            android:key="key_alarm_on"
+            android:title="알람설정"
+            android:defaultValue="true"/>
+
+        <SwitchPreference
+            android:key="key_bell_on"
+            android:title="소리알람"
+            android:defaultValue="false"/>
+
+        <SwitchPreference
+            android:key="key_vib_on"
+            android:title="진동알람"
+            android:defaultValue="true"/>
+
+    </PreferenceCategory>
+
+</PreferenceScreen>

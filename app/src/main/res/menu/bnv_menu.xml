@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/menu_board"
+        android:icon="@drawable/dollar"
+        android:title="환율확인"/>
+
+    <item android:id="@+id/menu_cal"
+        android:icon="@drawable/calculator"
+        android:title="환율계산기"/>
+
+    <item android:id="@+id/menu_alarm"
+        android:icon="@drawable/bell"
+        android:title="알림설정"/>
+
+</menu>
