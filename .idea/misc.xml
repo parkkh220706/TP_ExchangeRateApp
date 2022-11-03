@@ -3,10 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android/Projects/TP_ExchangeRateApp/app/src/main/res/drawable/ic_favor_click.xml" value="0.2605" />
         <entry key="..\:/Android/Projects/TP_ExchangeRateApp/app/src/main/res/layout/activity_main.xml" value="0.36614583333333334" />
         <entry key="..\:/Android/Projects/TP_ExchangeRateApp/app/src/main/res/layout/activity_main_preference.xml" value="0.1875" />
+        <entry key="..\:/Android/Projects/TP_ExchangeRateApp/app/src/main/res/layout/board_item.xml" value="0.1" />
         <entry key="..\:/Android/Projects/TP_ExchangeRateApp/app/src/main/res/layout/fragment_alarm.xml" value="0.36614583333333334" />
-        <entry key="..\:/Android/Projects/TP_ExchangeRateApp/app/src/main/res/layout/fragment_board.xml" value="0.33" />
+        <entry key="..\:/Android/Projects/TP_ExchangeRateApp/app/src/main/res/layout/fragment_board.xml" value="0.1" />
         <entry key="..\:/Android/Projects/TP_ExchangeRateApp/app/src/main/res/layout/fragment_cal.xml" value="0.36614583333333334" />
         <entry key="..\:/Android/Projects/TP_ExchangeRateApp/app/src/main/res/layout/fragment_fullscreen.xml" value="0.36614583333333334" />
         <entry key="..\:/Android/Projects/TP_ExchangeRateApp/app/src/main/res/layout/menu_bottom.xml" value="0.36614583333333334" />
