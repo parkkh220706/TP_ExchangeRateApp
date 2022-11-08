@@ -1,39 +1,48 @@
-package com.example.tp_exchangerateapp;
+package com.example.tp_exchangerateapp
 
-import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
+import androidx.recyclerview.widget.RecyclerView
+import com.example.tp_exchangerateapp.MyExchangeAdapter
+import android.view.LayoutInflater
+import android.view.ViewGroup
+import android.os.Bundle
+import android.view.View
+import androidx.fragment.app.Fragment
+import com.example.tp_exchangerateapp.R
+import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.tp_exchangerateapp.databinding.FragmentBoardBinding
+import java.util.ArrayList
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
+class BoardFragment : Fragment() {
 
-import java.util.ArrayList;
+    lateinit var binding:FragmentBoardBinding
+    var items:MutableList<Item> = mutableListOf()
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
 
-public class BoardFragment extends Fragment {
+        items.add(Item(R.drawable.ic_launcher_foreground, "미국", "usd", "1200"))
+        items.add(Item(R.drawable.ic_launcher_foreground, "일본", "jpy", "1200"))
+        items.add(Item(R.drawable.ic_launcher_foreground, "미국", "usd", "1200"))
+        items.add(Item(R.drawable.ic_launcher_foreground, "일본", "jpy", "1200"))
+        items.add(Item(R.drawable.ic_launcher_foreground, "미국", "usd", "1200"))
+        items.add(Item(R.drawable.ic_launcher_foreground, "일본", "jpy", "1200"))
 
-    private RecyclerView mRecyclerView;
-    private RecyclerView.LayoutManager mLayoutManager;
-    private MyExchangeAdapter mAdapter;
-    private ArrayList<ExchangeItem> list = new ArrayList<>();
-
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_board, container, false)
-
-        // Replace 'android.R.id.list' with the 'id' of your RecyclerView
-        mRecyclerView = (RecyclerView) view.findViewById(android.R.id.list);
-        mLayoutManager = new LinearLayoutManager(this.getActivity());
-        mRecyclerView.setLayoutManager(mLayoutManager);
-
-        list.add("안녕녕")
-
-       mAdapter = new MyExchangeAdapter();
-        mRecyclerView.setAdapter(mAdapter);
-        return view;
     }
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_board, container, false)
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        binding= FragmentBoardBinding.bind(view)
+
+        binding.recyclerBoard.adapter= MyExchangeAdapter(requireContext(), items)
+    }
+
 }

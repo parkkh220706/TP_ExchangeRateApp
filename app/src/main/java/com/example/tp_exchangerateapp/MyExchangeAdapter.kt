@@ -1,38 +1,43 @@
 package com.example.tp_exchangerateapp
 
+import android.content.ClipData
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import org.w3c.dom.Text
 
-class MyExchangeAdapter(private val mList: List<ExchangeItem>) : RecyclerView.Adapter<MyExchangeAdapter.VH>(){
+class MyExchangeAdapter constructor(val context: Context, var items:MutableList<Item>): RecyclerView.Adapter<MyExchangeAdapter.VH>(){
+
+    inner class VH constructor(itemView: View) : RecyclerView.ViewHolder(itemView){
+        val ivFlag: ImageView by lazy {itemView.findViewById(R.id.iv_flags)}
+        val tvTitle: TextView by lazy {itemView.findViewById(R.id.tv_title)}
+        val tvCode: TextView by lazy {itemView.findViewById(R.id.tv_code)}
+        val tvPrice: TextView by lazy {itemView.findViewById(R.id.tv_price)}
+
+
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VH {
-        val view = LayoutInflater.from(parent.context)
-            .inflate(R.layout.board_item, parent, false)
-        return VH(view)
+        val layoutInflater: LayoutInflater = LayoutInflater.from(context)
+        val itemView:View = layoutInflater.inflate(R.layout.board_item, parent, false)
+        return VH(itemView)
     }
 
     override fun onBindViewHolder(holder: VH, position: Int) {
-        val ExchangeItem = mList[position]
+        val item:Item = items.get(position)
 
-        holder.imageView.setImageResource(ExchangeItem.image)
-        holder.textView1.text = ExchangeItem.title
-        holder.textView2.text = ExchangeItem.code
-        holder.textView3.text = ExchangeItem.price
-    }
+        holder.ivFlag.setImageResource(item.image)
+        holder.tvTitle.text = item.title
+        holder.tvCode.text = item.code
+        holder.tvPrice.text = item.price
 
-    override fun getItemCount(): Int {
-        return mList.size
-    }
-
-    class VH(ItemView: View) : RecyclerView.ViewHolder(ItemView){
-        val imageView: ImageView = itemView.findViewById(R.id.iv_flags)
-        val textView1: TextView = itemView.findViewById(R.id.tv_title)
-        val textView2: TextView = itemView.findViewById(R.id.tv_code)
-        val textView3: TextView = itemView.findViewById(R.id.tv_price)
 
     }
+
+    override fun getItemCount(): Int = items.size
+
 }
