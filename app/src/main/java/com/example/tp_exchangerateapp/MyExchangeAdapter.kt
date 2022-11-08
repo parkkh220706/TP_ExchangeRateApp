@@ -13,7 +13,6 @@ import org.w3c.dom.Text
 class MyExchangeAdapter constructor(val context: Context, var items:MutableList<Item>): RecyclerView.Adapter<MyExchangeAdapter.VH>(){
 
     inner class VH constructor(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val ivFlag: ImageView by lazy {itemView.findViewById(R.id.iv_flags)}
         val tvTitle: TextView by lazy {itemView.findViewById(R.id.tv_title)}
         val tvCode: TextView by lazy {itemView.findViewById(R.id.tv_code)}
         val tvPrice: TextView by lazy {itemView.findViewById(R.id.tv_price)}
@@ -30,10 +29,9 @@ class MyExchangeAdapter constructor(val context: Context, var items:MutableList<
     override fun onBindViewHolder(holder: VH, position: Int) {
         val item:Item = items.get(position)
 
-        holder.ivFlag.setImageResource(item.image)
-        holder.tvTitle.text = item.title
-        holder.tvCode.text = item.code
-        holder.tvPrice.text = item.price
+        holder.tvTitle.text = item.cur_nm
+        holder.tvCode.text = item.cur_unit
+        holder.tvPrice.text = item.deal_bas_r
 
 
     }

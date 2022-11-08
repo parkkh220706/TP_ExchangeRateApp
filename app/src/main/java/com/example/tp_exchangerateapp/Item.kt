@@ -1,3 +1,3 @@
 package com.example.tp_exchangerateapp
 
-data class Item constructor(var image:Int, var title : String, var code : String, var price : String)
+data class Item constructor(var cur_nm : String, var cur_unit : String, var deal_bas_r : String)
